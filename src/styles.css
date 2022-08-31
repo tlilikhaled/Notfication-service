@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("assets/image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+table {
+    width: 100%;
+    background-color: #fafafa38;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    background-color: #e4e6e736;
+    color: #fb0000;
+    font-weight: 700;
+    top: -10px;
+  }
+  .container{
+    max-width:  1200px;
+    margin: 0 auto;
+  }
+  .mat-form-field-flex{
+    background-color: #fafafacc;
+    border-bottom: solid;
+    border-color: black;
+  }
+  tr.mat-header-row {
+    height: 45px;
+    font-size: x-large;
+    color: rgb(7, 27, 207);
+}
+tr.mat-row, tr.mat-footer-row {
+    height: 48px;
+    color: #000000;
+    font-size: x-large;
+    font-weight: 600;
+}
+.mat-paginator-page-size-label {
+    margin: 0 4px;
+    color: snow;
+}
+.mat-paginator-range-label {
+    margin: 0 32px 0 24px;
+    color: snow;
+}
+.mat-icon-button{
+    color: black;
+}
+
+.make-res{
+    background-color: red;
+}

@@ -1,0 +1,568 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 700;
+    font-family: unset;
+    font-size: xx-large;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+    
+  }
+
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+ 
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .card.highlight-card1 {
+   
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+    cursor: pointer;
+  }
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: calc(100vh - 95px);
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+  .badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.badge-dark {
+    color: #fff;
+    background-color: red;
+}
+.icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #333333;
+  background: #dddddd;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  left: -20px
+}
+
+.icon-button:hover {
+  cursor: pointer;
+}
+
+.icon-button:active {
+  background: #cccccc;
+}
+
+.icon-button__badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 25px;
+  height: 25px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- Toolbar -->
+
+ 
+<div class="toolbar" role="banner">
+  <img
+    width="60"
+    height="60"
+    
+    alt="Angular Logo"
+src="https://images.vexels.com/media/users/3/130145/isolated/preview/2cee84795c2754d6a4b0c76c697f9361-down-clock-up-dollar-icon-by-vexels.png"  />
+  <span>{{ title }}</span>
+ 
+    <div class="spacer"></div>
+    <button (click)="toggleDislpay()"   class="icon-button" >
+      <span class="material-icons">notifications</span>
+      <span class="icon-button__badge">{{counter}}</span>
+    </button>
+    
+</div>
+
+<div class="content" role="main">
+
+  <!-- Highlight Card -->
+  
+<div [hidden] = "isDisplay" style="background-color: #cccccc; ">
+<h2>{{msg}}</h2>
+<h2>You can see all your project notifications right down ↘️ </h2>
+</div>
+<div>
+  <button (click)="toggleDislpay1()" style="margin: 13px 12px 12px 10px;"><img src="./assets/R.jfif" style="width: 200px; "></button>
+  <button (click)="toggleDislpay2()"style="margin: 13px 12px 12px 10px;"><img src="./assets/R.png" style="width: 200px;height: 126px; "></button>
+  <button (click)="toggleDislpay3()"style="margin: 13px 12px 12px 10px;"><img src="./assets/OIP.jfif" style="width: 200px;height: 126px;  "></button>
+  <button (click)="toggleDislpay4()"style="margin: 13px 12px 12px 10px;"><img src="./assets/qnb.jfif" style="width: 200px; height: 126px; "></button>
+</div>
+
+  
+    <div [hidden] = "isDisplay1" class="container">
+      <div style="margin-top: 10px;">
+        <mat-form-field appearance="standard">
+          <mat-label >Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource"   matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+              <td mat-cell *matCellDef="let row"[ngClass]="{'make-red': row.type === 'WARN'  }"> {{row.type}} </td>
+            </ng-container>
+    
+                    <!-- ID Column -->
+            <ng-container matColumnDef="client">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Client </th>
+              <td mat-cell *matCellDef="let row"> {{row.client}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="projectId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> projectId</th>
+              <td mat-cell *matCellDef="let row"> {{row.projectId}}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="content">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Content </th>
+              <td mat-cell *matCellDef="let row"> {{row.content}} </td>
+            </ng-container>
+    
+    
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+        
+    
+      </div>
+    </div>
+
+  
+    <div [hidden] = "isDisplay2" class="container">
+      <div style="margin-top: 10px;">
+        <mat-form-field appearance="standard">
+          <mat-label >Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource"   matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+              <td mat-cell *matCellDef="let row"[ngClass]="{'make-red': row.type === 'WARN'  }"> {{row.type}} </td>
+            </ng-container>
+    
+                    <!-- ID Column -->
+            <ng-container matColumnDef="client">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Client </th>
+              <td mat-cell *matCellDef="let row"> {{row.client}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="projectId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> projectId</th>
+              <td mat-cell *matCellDef="let row"> {{row.projectId}}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="content">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Content </th>
+              <td mat-cell *matCellDef="let row"> {{row.content}} </td>
+            </ng-container>
+    
+    
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+        
+    
+      </div>
+    </div>
+
+    <div [hidden] = "isDisplay3" class="container">
+      <div style="margin-top: 10px;">
+        <mat-form-field appearance="standard">
+          <mat-label >Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource"   matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+              <td mat-cell *matCellDef="let row"[ngClass]="{'make-red': row.type === 'WARN'  }"> {{row.type}} </td>
+            </ng-container>
+    
+                    <!-- ID Column -->
+            <ng-container matColumnDef="client">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Client </th>
+              <td mat-cell *matCellDef="let row"> {{row.client}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="projectId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> projectId</th>
+              <td mat-cell *matCellDef="let row"> {{row.projectId}}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="content">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Content </th>
+              <td mat-cell *matCellDef="let row"> {{row.content}} </td>
+            </ng-container>
+    
+    
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+        
+    
+      </div>
+    </div>
+
+    <div [hidden] = "isDisplay4" class="container">
+      <div style="margin-top: 10px;">
+        <mat-form-field appearance="standard">
+          <mat-label >Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource"   matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+              <td mat-cell *matCellDef="let row"[ngClass]="{'make-red': row.type === 'WARN'  }"> {{row.type}} </td>
+            </ng-container>
+    
+                    <!-- ID Column -->
+            <ng-container matColumnDef="client">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Client </th>
+              <td mat-cell *matCellDef="let row"> {{row.client}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="projectId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> projectId</th>
+              <td mat-cell *matCellDef="let row"> {{row.projectId}}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="content">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Content </th>
+              <td mat-cell *matCellDef="let row"> {{row.content}} </td>
+            </ng-container>
+    
+    
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+        
+    
+      </div>
+    </div>
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+   
+  </footer>
+
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<router-outlet></router-outlet>
